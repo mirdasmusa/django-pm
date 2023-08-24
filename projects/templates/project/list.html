@@ -1,0 +1,12 @@
+{% load i18n %}
+{% block content %}
+
+   <h3>{% trans 'MY project' %}</h3>
+   <ul>
+       {% for project in object_list %}
+          <li>{{ project.title }} <a href="{% url 'Project_update' project.id %}"> Edit </a> </li>
+       {% empty %}
+          <li>{% trans 'There are on projects to show' %}</li>
+       {% endfor %}
+   </ul>
+{% endblock %}
