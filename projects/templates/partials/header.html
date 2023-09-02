@@ -19,7 +19,7 @@
                 {{ user.username }}
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">{% trans 'profile' %}</a></li>
+                <li><a class="dropdown-item" href="{% url 'profile' %}">{% trans 'profile' %}</a></li>
                 <li><hr class="dropdown-divider"></li>
                 <li><a class="dropdown-item" href="{% url 'logout' %}">{% trans 'logout' %}</a></li>
               </ul>
@@ -28,21 +28,24 @@
           <form method="GET" action="{% url 'Project_list' %}" class="d-flex">
             <div class="input-group">
               <input
-                      type="text"
-                      name="q"
-                      class="form-control"
-                      placeholder="{% trans 'Search' %}"
-                      value="{{ request.GET.q }}"
-                      />
+                   type="text"
+                   name="q"
+                   class="form-control"
+                   placeholder="{% trans 'Search' %}"
+                   value="{{ request.GET.q }}"
+              />
               <button class="btn btn-outline-light" type="submit">
-                  <i class="bi bi-search"></i>
-              </button>
+                <i class="bi bi-search"></i>
+                </button>
             </div>
           </form>
         {% else %}
-          <a class="btn btn-outline-light" href="{% url 'login' %}">
-            {% trans 'Login' %}
-          </a>
+            <a class="btn btn-outline-light" href="{% url 'register' %}">
+              {% trans 'Register' %}
+            </a>
+            <a class="btn btn-outline-light" href="{% url 'login' %}">
+              {% trans 'Login' %}
+            </a>
         {% endif %}
 
     </div>
