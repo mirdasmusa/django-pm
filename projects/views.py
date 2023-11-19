@@ -83,9 +83,9 @@ class TaskUpdateView(LoginRequiredMixin,UserPassesTestMixin, UpdateView):
 
 class TaskDeleteView(LoginRequiredMixin,UserPassesTestMixin, DeleteView):
     model = models.Task
-    def get_success_url(self):
+    def get_success_url (self):
         return reverse('Project_update', args=[self.object.project.id])
-    def test_func(self):
+    def test_func (self):
         return self.get_object().project.user_id == self.request.user.id
 
 

@@ -1,5 +1,10 @@
+from accounts import admin
 from . import views
 from django.urls import path , include
+
+from django.utils.translation import gettext as _
+
+admin.site_header = _('project management')
 
 urlpatterns = [
     path('', views.ProjectListView.as_view(), name='Project_list'),
