@@ -8,9 +8,14 @@ from django.utils.translation import gettext as _
 class Category (models.Model):
     name = models.CharField(max_length=255)
 
-
-    def __str__(self):
+    def __dir__(self):
         return self.name
+    class Meta:
+        verbose_name = _('Category')
+        verbose_name_plural = _('Category')
+
+
+
 
 class ProjectStatus(models.IntegerChoices):
     PEDNING = 1, _('pending')
@@ -40,6 +45,9 @@ class Project(models.Model):
 
     def __str__(self):
         return self.title
+    class Meta:
+        verbose_name = _('Project')
+        verbose_name_plural = _('Project')
 
 
 
@@ -52,6 +60,10 @@ class Task(models.Model):
         return self.description
 
 
+
+    class Meta:
+        verbose_name = _('Task')
+        verbose_name_plural = _('Task')
 
 
 

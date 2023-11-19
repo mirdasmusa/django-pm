@@ -25,7 +25,7 @@ msgstr "التصنيف"
 
 #: projects/forms.py:13
 msgid "title"
-msgstr "العوان"
+msgstr "العنوان"
 
 #: projects/forms.py:14
 msgid "description"
